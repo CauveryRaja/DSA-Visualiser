@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Grid</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+</head>
+<body onload="init()">
+    <form>
+        <label>Rows: </label>
+        <input type="number" name="rows">
+        <input type="button" value="Submit" onclick="displayGrid(rows.value)">
+    </form>
+    <br>
+    <div class="grid-container">
+        <table id="grid">
+        </table>
+    </div>
+</body>
+</html>

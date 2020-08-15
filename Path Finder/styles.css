@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+    text-align: center;
+}
+
+.grid-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#grid {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#grid td {
+    border: 1px solid black;
+    padding: 10px;
+}
