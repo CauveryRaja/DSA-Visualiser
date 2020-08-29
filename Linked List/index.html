@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+    <script src="app.js"></script>
+</head>
+<body style="text-align: center;" onload="linkedList.initCanvas()">
+    <div class="form-group">
+        <label for="num">Number</label>
+        <input type="number" id="num">
+        <label for="pos">Position</label>
+        <input type="number" id="pos">
+        <button onclick="linkedList.insert(num.value,pos.value)">Add</button>
+        <button onclick="linkedList.remove(num.value)">Remove</button>
+        <button onclick="linkedList.removeAt(pos.value)">Remove At</button>
+        <button onclick="linkedList.findIndex(num.value,pos.value)">Find Element At</button>
+    </div>
+    <canvas width="800" height="800"></canvas>
+</body>
+</html>
