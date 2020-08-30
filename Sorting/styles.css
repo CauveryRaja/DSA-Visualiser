@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+svg {
+    background-color: rgb(188, 192, 190);
+}
+
+
+.bar {
+    background-color: linear-gradient(to bottom, #000099 0%, #6600ff 100%);
+} 
