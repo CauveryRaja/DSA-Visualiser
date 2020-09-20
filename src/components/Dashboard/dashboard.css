@@ -1,0 +1,16 @@
+.dashboardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dsEntry {
+    background-color: lightgray;
+    padding: 6%;
+    margin: 2%;
+}
+
+.sortEntry {
+    background-color: lightgray;
+    padding: 6%;
+    margin: 2%;
+}

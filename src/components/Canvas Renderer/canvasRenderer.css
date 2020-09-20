@@ -1,0 +1,43 @@
+.canvasContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 70%;
+    margin: 2% auto;
+}
+
+.toolbar {
+    display: inline-block;
+    padding: 5px;
+}
+
+.toolbar li {
+    list-style: none;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    color: gray;
+    background-color: rgb(233, 233, 233);
+}
+
+.form-group {
+    text-align: left;
+    margin: 5px 5px 10px 5px;
+}
+
+.panel label, .panel input {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.panel input {
+    height: 25px;
+}
+
+.toolbar li:hover {
+    background-color: lightgray;
+}
+
+canvas {
+    border: 1px solid gray;
+    border-radius: 1%;
+}
