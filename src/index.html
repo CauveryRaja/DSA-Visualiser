@@ -2,9 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>DSA Visualizer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
-  hai all, hello world
+    <!-- Header with Title and Navbar -->
+    <header>
+      <div class="appTitle">
+        DSA Visualizer
+      </div>
+      <nav>
+        <ul>
+          <li onclick="onMenuChange('DynamicArray')">DynamicArray</li>
+          <li onclick="onMenuChange('LinkedList')">LinkedList</li>
+          <li onclick="onMenuChange('Sorting')">Sorting</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="container">
+      <ul className="toolbar">
+        <li></li>
+      </ul>
+    </main>
   </body>
 </html>

@@ -1,5 +1,23 @@
-import num from './modules/dynamicArray';
+import CanvasRenderer from './modules/canvasRenderer';
+import SVGRenderer from './modules/svgRenderer';
 
-console.log('Index js...');
-const a = 245;
-console.log(`Displaying imported value ${num} and ${a}`);
+let domElements = {
+  containerId: 'container',
+  canvasId: 'canvas',
+  svgId: 'svg'
+};
+
+function onMenuChange(activeMenu) {
+  clearContainer();
+  if(activeMenu === 'DynamicArray' || activeMenu === 'LinkedList') {
+    let canvas = new CanvasRenderer();
+    canvas.init(domElements, activeMenu);
+  }
+  else if(activeMenu === 'Sort') {
+    new SVGRenderer();
+  }
+}
+
+function clearContainer() {
+  document.getElementById(containerId).innerHTML = '';
+}
