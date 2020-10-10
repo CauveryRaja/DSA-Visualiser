@@ -6,6 +6,7 @@ class DynamicArray {
     }
 
     insert(data, index) {
+      console.log('insert called...');
         data = parseInt(data);
         index = parseInt(index);
         let entryObj = {

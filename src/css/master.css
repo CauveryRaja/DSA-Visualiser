@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Calibri', serif;
+}
+
+.canvasElm {
+  border: 5px solid white;
+  border-radius: 5%;
+}
+
+.appTitle {
+  display: inline-block;
+}
+
+nav {
+  display: block;
+  padding: 1rem;
+}
+
+header {
+  height: 5%;
+}
+
+header .menuBar {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+}
+
+header .menuBar li {
+  display: inline;
+  list-style: none;
+  margin: 5px;
+}
+
+header .menuBar li:hover {
+  border-bottom: 3px solid #8bc34ac9;
+}
+
+main#container {
+  background-color: #8bc34ac9;
+  padding: 2% 5%;
+  height: 83vh;
+  display: flex;
+}
+
+.toolbar {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar li {
+  display: inline-block;
+  list-style: none;
+}
+
+.toolbar li i {
+  /* color: #8bc34ac9; */
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  font-size: 15px;
+  background-color: white;
+}
+
+footer {
+  position: fixed;
+  left: 45%;
+  bottom: 10px;
+  text-align: center;
+}
+
+footer i {
+  color: red;
+  padding: 3px;
+}

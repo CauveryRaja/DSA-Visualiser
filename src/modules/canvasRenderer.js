@@ -1,5 +1,5 @@
-import DynamicArray from './modules/dynamicArray';
-import LinkedList from './modules/linkedList';
+import DynamicArray from './dynamicArray';
+import LinkedList from './linkedList';
 
 class CanvasRenderer {
 
@@ -10,34 +10,39 @@ class CanvasRenderer {
 
   init(domElements, modelType) {
     this.domElements = domElements;
-    this.configureModel(modelType, getContext());
+    this.displayCanvas();
+    this.configureModel(modelType, this.getContext());
+    console.log(this.model, this.model.insert);
+    this.displayToolbar();
   }
 
   configureModel(type, cxt) {
     switch(type) {
-      'dynamicArray': this.model = new DynamicArray(cxt);
-                      break;
-      'linkedList':   this.model = new LinkedList(cxt);
-                      break;
+      case 'DynamicArray': this.model = new DynamicArray(cxt);
+                            break;
+      case 'LinkedList':   this.model = new LinkedList(cxt);
+                            break;
     }
   }
 
   displayCanvas() {
-    let canvas = `<canvas id='${domElements.canvasId}'>
+    let canvas = `<canvas class=\'canvasElm\' id='${this.domElements.canvasId}' width=\'500\' height=\'450\'>
                   </canvas>`;
-    document.getElementById(domElements.containerId).insertAdjacentHTML(canvas, 'beforeend');
+    document.getElementById(this.domElements.containerId).insertAdjacentHTML('beforeEnd', canvas);
   }
 
   displayToolbar() {
-    let toolbar = `<ul className="toolbar">
-                    <li onclick='${this.model.insert(10,0)}'><i class='fa fa-add'></i></li>
+    let toolbar = `<ul class=\'toolbar\'>
+                    <li onclick='${this.model.insert.bind(this.model,10,0)}'><i class='fa fa-plus'></i></li>
                     <li><i class='fa fa-edit'></i></li>
                     <li><i class='fa fa-trash'></i></li>
                   </ul>`;
-    document.getElementById(domElements.containerId).insertAdjacentHTML(toolbar, 'beforeend');
+    document.getElementById(this.domElements.containerId).insertAdjacentHTML('beforeEnd', toolbar);
   }
 
   getContext() {
-    document.getElementById(domElements.canvasId).getContext('2d');
+    return document.getElementById(this.domElements.canvasId).getContext('2d');
   }
 }
+
+export default CanvasRenderer;
