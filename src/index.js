@@ -3,15 +3,23 @@ import SVGRenderer from './modules/svgRenderer';
 
 import './css/master.css';
 
-let domElements = {
+let currEntity, domElements;
+domElements = {
   containerId: 'container',
   canvasId: 'canvas',
   svgId: 'svg'
 };
 
+function setDefaults() {
+  currEntity = 'DynamicArray';
+  let canvas = new CanvasRenderer();
+  canvas.init(domElements, currEntity);
+  document.getElementById(currEntity + 'Menu').classList.add('active');
+}
+
 function onMenuChange(activeMenu) {
   clearContainer();
-  console.log(activeMenu);
+  document.getElementById(currEntity + 'Menu').classList.remove('active');
   if(activeMenu === 'DynamicArray' || activeMenu === 'LinkedList') {
     let canvas = new CanvasRenderer();
     canvas.init(domElements, activeMenu);
@@ -19,6 +27,8 @@ function onMenuChange(activeMenu) {
   else if(activeMenu === 'Sort') {
     new SVGRenderer();
   }
+  currEntity = activeMenu;
+  document.getElementById(currEntity + 'Menu').classList.add('active');
 }
 
 function clearContainer() {
@@ -28,3 +38,4 @@ function clearContainer() {
 window.onMenuChange = onMenuChange;
 window.clearContainer = clearContainer;
 window.domElements = domElements;
+window.setDefaults = setDefaults;

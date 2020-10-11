@@ -6,7 +6,6 @@ class DynamicArray {
     }
 
     insert(data, index) {
-      console.log('insert called...');
         data = parseInt(data);
         index = parseInt(index);
         let entryObj = {
@@ -104,7 +103,6 @@ class DynamicArray {
     }
 
     drawElmCell(elm) {
-        console.log('DrawElmCell: ', elm);
         this.drawCell(elm, 'default');
     }
 
@@ -114,7 +112,8 @@ class DynamicArray {
         this.$cxt.fillStyle = color;
         this.$cxt.clearRect(x,y,50,50);
         this.$cxt.fillRect(x,y,50,50);
-        this.$cxt.fillStyle = 'black';
+
+        this.$cxt.strokeStyle = '#cc6600';
         this.$cxt.strokeRect(x,y,50,50);
 
         // Display Data Value
@@ -129,7 +128,7 @@ class DynamicArray {
         let colorMap = {
             'active': 'green',
             'traverse': 'blue',
-            'default': 'lightgrey'
+            'default': '#ffcc66'
         }
         return colorMap[status];
     }

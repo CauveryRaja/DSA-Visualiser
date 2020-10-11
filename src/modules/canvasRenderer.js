@@ -1,5 +1,7 @@
 import DynamicArray from './dynamicArray';
 import LinkedList from './linkedList';
+import InfoBar from './infoBar';
+import ToolbarRenderer from './toolbarRenderer';
 
 class CanvasRenderer {
 
@@ -12,8 +14,6 @@ class CanvasRenderer {
     this.domElements = domElements;
     this.displayCanvas();
     this.configureModel(modelType, this.getContext());
-    console.log(this.model, this.model.insert);
-    this.displayToolbar();
   }
 
   configureModel(type, cxt) {
@@ -23,6 +23,9 @@ class CanvasRenderer {
       case 'LinkedList':   this.model = new LinkedList(cxt);
                             break;
     }
+    this.toolbar = new ToolbarRenderer(this.domElements, this.model);
+    this.infoBar = new InfoBar(this.domElements, this.model);
+    this.infoBar.init(type);
   }
 
   displayCanvas() {

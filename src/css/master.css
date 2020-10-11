@@ -8,6 +8,7 @@
 .canvasElm {
   border: 5px solid white;
   border-radius: 5%;
+  background-color: black;
 }
 
 .appTitle {
@@ -21,6 +22,7 @@ nav {
 
 header {
   height: 5%;
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
 }
 
 header .menuBar {
@@ -33,6 +35,12 @@ header .menuBar li {
   display: inline;
   list-style: none;
   margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid #8bc34ac9;
 }
 
 header .menuBar li:hover {
@@ -46,25 +54,91 @@ main#container {
   display: flex;
 }
 
-.toolbar {
+#toolbar {
   padding: 5px;
   margin: 5px;
   display: flex;
   flex-direction: column;
 }
 
-.toolbar li {
+#toolbar li {
   display: inline-block;
   list-style: none;
 }
 
-.toolbar li i {
+#toolbar li i {
   /* color: #8bc34ac9; */
   padding: 10px;
   margin: 5px;
   border-radius: 50%;
   font-size: 15px;
   background-color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+#toolbar li i:hover {
+  background: transparent;
+  border: 2px solid white;
+}
+
+#infoBar {
+  padding: 3%;
+  margin-left: 10%;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+#add-form {
+  padding: 30px;
+  border: 2px solid white;
+}
+
+#add-form .form-title {
+  background: #a2ce71;
+  width: 40%;
+  margin: 0 auto;
+  position: absolute;
+  top: 20px;
+  left: 30%;
+  text-align: center;
+  padding: 10px;
+  color: black;
+  border: 1px solid white;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.form-group label {
+  font-weight: 300;
+}
+
+.form-field {
+  width: 100%;
+  height: 2rem;
+  border-radius: 5%;
+  border: 1px solid grey;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+#add-form .addBtn {
+  width: 90%;
+  background-color: green;
+  color: white;
+  margin: 13px;
+  display: inline-block;
+  border-radius: 3%;
+  padding: 8px;
+  border: 1px solid grey;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#add-form .addBtn:hover {
+  border-color: white;
 }
 
 footer {
