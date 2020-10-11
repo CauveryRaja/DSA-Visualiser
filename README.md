@@ -4,6 +4,9 @@ A **Vanilla JavaScript** application that allows to visualize common Data Struct
 
 All JS and CSS files bundled using **Webpack** and polyfills support by **Babel**.
 
+## Demo
+Take a live tour at [Demo](https://cauveryraja.github.io/DSA-Visualiser/)
+
 <kbd>
   <img alt="Home Page" src="https://github.com/CauveryRaja/DSA-Visualiser/blob/master/snapshots/homeInitial.png">
 </kbd>
