@@ -5,9 +5,9 @@ import './css/master.css';
 
 let currEntity, domElements;
 domElements = {
-  containerId: 'container',
-  canvasId: 'canvas',
-  svgId: 'svg'
+  container: document.getElementById('container'),
+  canvas: document.getElementById('canvas'),
+  svg: document.getElementById('svg')
 };
 
 function setDefaults() {
@@ -32,9 +32,10 @@ function onMenuChange(activeMenu) {
 }
 
 function clearContainer() {
-  document.getElementById(domElements.containerId).innerHTML = '';
+  domElements.container.innerHTML = '';
 }
 
+// Set Local methods to Global (Window) scope
 window.onMenuChange = onMenuChange;
 window.clearContainer = clearContainer;
 window.domElements = domElements;
