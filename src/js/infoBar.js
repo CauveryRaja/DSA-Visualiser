@@ -8,9 +8,9 @@ class InfoBar {
     this.displayInfoBar();
     let domElm = '';
     switch(type) {
-      case 'DynamicArray': domElm = this.showArrayInfo();
+      case 'DynamicArray':  domElm = this.showArrayInfo();
                             break;
-      case 'LinkedList': domElm = this.showListInfo();
+      case 'LinkedList':    domElm = this.showListInfo();
                             break;
     }
     return domElm;

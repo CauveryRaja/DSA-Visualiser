@@ -7,7 +7,9 @@ let currEntity, domElements;
 domElements = {
   container: document.getElementById('container'),
   canvas: document.getElementById('canvas'),
-  svg: document.getElementById('svg')
+  svg: document.getElementById('svg'),
+  addForm: document.getElementById('add-form'),
+  infoBar: document.getElementById('info-bar');
 };
 
 function setDefaults() {

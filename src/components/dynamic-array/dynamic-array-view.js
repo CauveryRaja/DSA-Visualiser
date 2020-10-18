@@ -2,6 +2,8 @@ class DynamicArrayView {
 
     constructor(cxt) {
         this.$cxt = cxt;
+        this.$array = [];
+        this.actions = [];
     }
 
     computeCoordinates(index) {
@@ -13,8 +15,19 @@ class DynamicArrayView {
         }
     }
 
-    triggerActions(events) {
-        events.forEach((entry, i) => {
+    initActions() {
+        this.actions = [];
+    }
+
+    createAction(elm, type) {
+        this.actions.push({
+            elm: elm,
+            type: type
+        });
+    }
+
+    triggerActions() {
+        this.actions.forEach((entry, i) => {
             setTimeout(() => {
                 if(entry instanceof Array) {
                     entry.forEach(subEntry => {
@@ -82,4 +95,11 @@ class DynamicArrayView {
     }
 }
 
-export default DynamicArrayView;
+class ViewEntry {
+    constructor(data, pos) {
+        this.data = data;
+        this.pos = this.computeCoordinates(pos ? pos : this.$array.length);
+    }
+}
+
+export default DynamicArrayView, ViewEntry;
