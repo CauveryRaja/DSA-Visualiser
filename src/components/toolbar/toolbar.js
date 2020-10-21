@@ -1,4 +1,5 @@
 import InfoBar from '../entity-info/entity-info';
+import ToolbarView from './toolbar-view';
 
 class Toolbar {
   constructor(domElements, model) {
