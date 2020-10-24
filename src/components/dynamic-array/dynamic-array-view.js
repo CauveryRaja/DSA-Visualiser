@@ -11,10 +11,22 @@ export class DynamicArrayView {
     }
 
     createAction(elm, type) {
-        this.actions.push({
-            elm: elm,
-            type: type
-        });
+        if(elm instanceof Array) {
+            let instantActions = [];
+            for(let i=0; i<elm.length; i++) {
+                instantActions.push({
+                    elm: elm[i],
+                    type: type
+                });
+            }
+            this.actions.push(instantActions);
+        }
+        else {
+            this.actions.push({
+                elm: elm,
+                type: type
+            });
+        }
     }
 
     triggerActions() {

@@ -18,9 +18,9 @@ class InfoBar {
   }
 
   showAddForm() {
-      this.view.showAddForm();
+      let form = this.view.showAddForm();
       let insertData = this.entity.insert.bind(this.entity);
-      let form = document.getElementById(this.domElements.addForm);
+      // let form = document.getElementById(this.domElements.addForm);
       form.addEventListener('submit', function(event) {
         event.preventDefault();
         let [data, pos] = [form.elements['data'].value, form.elements['index'].value];

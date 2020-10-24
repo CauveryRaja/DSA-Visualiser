@@ -29,13 +29,13 @@ class DynamicArray {
     }
 
     shiftRight(index) {
-        this.view.$array[this.size] = new ViewEntry(undefined, this.view.$array);
+        this.view.$array[this.size] = new ViewEntry(undefined, this.size);
         this.view.createAction(this.view.$array[this.size-1], 'default');
         for(let i=this.size-1; i>index; i--) {
             this.model.data[i] = this.model.data[i-1];
             this.view.$array[i].data = this.view.$array[i-1].data;
             this.view.$array[i-1].data = undefined;
-            this.View.createAction([JSON.parse(JSON.stringify(this.view.$array[i])), JSON.parse(JSON.stringify(this.view.$array[i-1]))],
+            this.view.createAction([JSON.parse(JSON.stringify(this.view.$array[i])), JSON.parse(JSON.stringify(this.view.$array[i-1]))],
                                   ['default', 'default']);
         }
     }

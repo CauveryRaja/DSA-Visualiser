@@ -36,6 +36,7 @@ class InfoView {
                       <button class="addBtn">Add</button>
                     </form>`;
       document.getElementById(this.domElements.infoBar).insertAdjacentHTML('beforeEnd', domElm);
+      return document.getElementById(this.domElements.addForm);
     }
 
     displayInfoBar() {
