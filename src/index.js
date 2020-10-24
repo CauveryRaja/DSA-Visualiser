@@ -1,15 +1,15 @@
-import CanvasRenderer from './modules/canvasRenderer';
-import SVGRenderer from './modules/svgRenderer';
+import CanvasRenderer from './components/canvas-renderer/canvas-renderer';
+// import SVGRenderer from './components/svgRenderer';
 
-import './css/master.css';
+import './main.scss';
 
 let currEntity, domElements;
 domElements = {
-  container: document.getElementById('container'),
-  canvas: document.getElementById('canvas'),
-  svg: document.getElementById('svg'),
-  addForm: document.getElementById('add-form'),
-  infoBar: document.getElementById('info-bar');
+  container: 'container',
+  canvas: 'canvas',
+  svg: 'svg',
+  addForm: 'add-form',
+  infoBar: 'info-bar'
 };
 
 function setDefaults() {
@@ -34,7 +34,7 @@ function onMenuChange(activeMenu) {
 }
 
 function clearContainer() {
-  domElements.container.innerHTML = '';
+  document.getElementById(domElements.container).innerHTML = '';
 }
 
 // Set Local methods to Global (Window) scope

@@ -1,18 +1,9 @@
-class DynamicArrayView {
+export class DynamicArrayView {
 
     constructor(cxt) {
         this.$cxt = cxt;
         this.$array = [];
         this.actions = [];
-    }
-
-    computeCoordinates(index) {
-        let x = 100, y = 200;
-        let offset = 50;
-        return {
-            x: x + (index*offset),
-            y: y + (Math.floor(index/10) * offset)
-        }
     }
 
     initActions() {
@@ -95,11 +86,18 @@ class DynamicArrayView {
     }
 }
 
-class ViewEntry {
+export class ViewEntry {
     constructor(data, pos) {
         this.data = data;
-        this.pos = this.computeCoordinates(pos ? pos : this.$array.length);
+        this.pos = this.computeCoordinates(pos);
+    }
+
+    computeCoordinates(index) {
+        let x = 100, y = 200;
+        let offset = 50;
+        return {
+            x: x + (index*offset),
+            y: y + (Math.floor(index/10) * offset)
+        }
     }
 }
-
-export default DynamicArrayView, ViewEntry;

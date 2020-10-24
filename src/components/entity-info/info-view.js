@@ -1,3 +1,5 @@
+import './entity-info.scss';
+
 class InfoView {
     constructor(domElements) {
         this.domElements = domElements;
@@ -8,7 +10,7 @@ class InfoView {
       let elm = `<div class="dynamicArrayInfo">
                     Dynamic Array doubles its capacity if size exceeds capacity
                  </div>`;
-      this.domElements.infoBar.insertAdjacentHTML('beforeEnd', elm);
+      document.getElementById(this.domElements.infoBar).insertAdjacentHTML('beforeEnd', elm);
     }
 
     showListInfo() {
@@ -16,7 +18,7 @@ class InfoView {
       let elm = `<div class="dynamicArrayInfo">
                     Linked List inserts one by one
                  </div>`;
-      this.domElements.infoBar.insertAdjacentHTML('beforeEnd', elm);
+      document.getElementById(this.domElements.infoBar).insertAdjacentHTML('beforeEnd', elm);
     }
 
     showAddForm() {
@@ -33,18 +35,18 @@ class InfoView {
                       </div>
                       <button class="addBtn">Add</button>
                     </form>`;
-      this.domElements.infoBar.insertAdjacentHTML('beforeEnd', domElm);
+      document.getElementById(this.domElements.infoBar).insertAdjacentHTML('beforeEnd', domElm);
     }
 
-    displayInfoBar(domElm) {
-      domElm = `<div id="infoBar">
-                  ${domElm}
+    displayInfoBar() {
+      let domElm = `<div id="info-bar">
+                  Info bar
                 </div>`;
-      this.domElements.container.insertAdjacentHTML('beforeEnd', domElm);
+      document.getElementById(this.domElements.container).insertAdjacentHTML('beforeEnd', domElm);
     }
 
     clearInfoBar() {
-      this.domElements.infoBar.innerHTML = '';
+      document.getElementById(this.domElements.infoBar).innerHTML = '';
     }
 }
 

@@ -5,8 +5,8 @@ class Toolbar {
   constructor(domElements, model) {
     this.domElements = domElements;
     this.infoBar = new InfoBar(this.domElements, model);
+    this.view = new ToolbarView(domElements);
     this.displayToolbar();
-    this.view = new ToolbarView();
   }
 
   displayToolbar() {
@@ -26,4 +26,4 @@ class Toolbar {
 
 }
 
-export default ToolbarRenderer;
+export default Toolbar;

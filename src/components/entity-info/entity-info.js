@@ -1,4 +1,4 @@
-import InfoView from './entity-info';
+import InfoView from './info-view';
 
 class InfoBar {
   constructor(domElements, entity) {
@@ -8,11 +8,11 @@ class InfoBar {
   }
 
   init(type) {
-    this.displayInfoBar();
+    this.view.displayInfoBar();
     switch(type) {
-      case 'DynamicArray':  this.showArrayInfo();
+      case 'DynamicArray':  this.view.showArrayInfo();
                             break;
-      case 'LinkedList':    this.showListInfo();
+      case 'LinkedList':    this.view.showListInfo();
                             break;
     }
   }
@@ -20,7 +20,7 @@ class InfoBar {
   showAddForm() {
       this.view.showAddForm();
       let insertData = this.entity.insert.bind(this.entity);
-      let form = this.domElements.addForm;
+      let form = document.getElementById(this.domElements.addForm);
       form.addEventListener('submit', function(event) {
         event.preventDefault();
         let [data, pos] = [form.elements['data'].value, form.elements['index'].value];

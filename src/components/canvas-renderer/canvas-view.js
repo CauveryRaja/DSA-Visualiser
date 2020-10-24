@@ -1,3 +1,5 @@
+import './canvas-renderer.scss';
+
 class CanvasView {
     constructor(domElements) {
         this.domElements = domElements;
@@ -6,11 +8,11 @@ class CanvasView {
     displayCanvas() {
       let canvas = `<canvas class=\'canvasElm\' id=\'canvas\' width=\'500\' height=\'450\'>
                     </canvas>`;
-      this.domElements.container.insertAdjacentHTML('beforeEnd', canvas);
+      document.getElementById(this.domElements.container).insertAdjacentHTML('beforeEnd', canvas);
     }
 
     getContext() {
-      return this.domElements.canvas.getContext('2d');
+      return document.getElementById(this.domElements.canvas).getContext('2d');
     }
 }
 
